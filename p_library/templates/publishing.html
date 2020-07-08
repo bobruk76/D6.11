@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+{% include "header.html" %}
+<h1 class="text-center">Количество представленных издательств: {{ publishers|length }} .</h1>
+<div class="container"></div>
+    <ul class="list-group col-11 mx-auto">
+        {% for publisher in publishers %}
+            <li class="list-group-item list-group-item-primary">{{ publisher.name }}
+                <span class="badge badge-primary badge-pill">{{ publisher.books.all|length }}</span>
+                <ul>
+                {% for book in publisher.books.all %}
+                    <li class="list-group-item list-group-item-secondary">{{ book.title }} -- {{ book.year_release }}</li>
+                {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Удалить запись</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <div class="container col-6">
+        <h1 class="text-center">Внимание запись будет удалена!</h1>
+        <form class="mt-5" method="post">{% csrf_token %}
+            <input type="submit" class="btn btn-outline-danger col-4" value="Удалить">
+        </form>
+        </div>
+    </body>
+</html>
