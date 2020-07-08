@@ -1,0 +1,20 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;" ii="footer">
+            <div class="list-group list-group-horizontal mx-auto">
+                <a href="/books/" class="list-group-item list-group-item-action">Список книг</a>
+                <a href="/publ/" class="list-group-item list-group-item-action">Список издателей</a>
+                <a href="/author/" class="list-group-item list-group-item-action">Список авторов</a>
+                <a href="/reader/" class="list-group-item list-group-item-action">Список читателей</a>
+            </div>
+        </nav>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
