@@ -7,6 +7,11 @@
         <table class="table table-striped table-hover col-11 mx-auto">
             {% for book in books %}
             <tr>
+                <td>
+                    {% if book.cover %}
+                    <img height="200" width="200" src="{{ book.cover.url }}" alt="">
+                    {% endif %}
+                </td>
                 <td>{{ book.title }}</td>
                 <td>{{ book.ISBN }}</td>
                 <td>{{ book.description }}</td>

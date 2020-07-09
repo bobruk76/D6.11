@@ -1,7 +1,6 @@
-import uuid
-
 from django.utils.translation import gettext as _
 from django.db import models
+from django.urls import reverse
 
 
 class Author(models.Model):
@@ -30,9 +29,13 @@ class Book(models.Model):
     author = models.ForeignKey("p_library.Author", on_delete=models.CASCADE,
                                verbose_name=_("Автор"),
                                related_name="book_author")
+    cover = models.ImageField(upload_to='cover_photo', blank=True)
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('author', kwargs={'pk': self.pk})
 
 
 class Publisher(models.Model):
